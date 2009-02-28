@@ -26,13 +26,17 @@ class ExtJSLoader {
 
   function MatchCategory(){
 
-    $cats = get_the_category( the_ID() );
+    if ( is_single() ){
 
-    foreach( $cats as $cat ){
-      if ($cat->term_id == $this->load_on_cat_id ){
-        $this->load_extjs = true;
-        return;
+      $cats = get_the_category();
+
+      foreach( $cats as $cat ){
+        if ($cat->term_id == $this->load_on_cat_id ){
+          $this->load_extjs = true;
+          return;
+        }
       }
+
     }
 
     $this->load_extjs = false;
