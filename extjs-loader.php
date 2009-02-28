@@ -24,11 +24,17 @@ class ExtJSLoader {
 
   // Stick the stylesheet in the header
   function AddStylesheet() {
-    echo '  <link type="text/css" rel="stylesheet" href="' . $this->pluginurl . 'syntaxhighlighter/styles/shCore.css"></link>' . "\n";
-
+    echo '  <link type="text/css" rel="stylesheet" href="' . $this->pluginurl . 'extjs/resources/css/ext-all.css"></link>' . "\n";
   }
 
+  function AddJavascript() {
+    echo '  <script type="text/javascript" src="' . $this->pluginurl . 'extjs/adapter/ext/ext-base.js"></script>' . "\n";
+    echo '  <script type="text/javascript" src="' . $this->pluginurl . 'extjs/ext-all.js"></script>' . "\n";
+  }
 
 }
+
+// Initiate the plugin class
+$ExtJSLoader = new ExtJSLoader();
 
 ?>
