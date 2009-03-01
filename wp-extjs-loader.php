@@ -3,19 +3,19 @@
 /*
 Plugin Name: ExtJS Loader
 Plugin URI: http://blog.prbonogeek.org
-Description: Load ExtJS libraries into posts when in the ExtJS Category
+Description: Load ExtJS 2.2.1 libraries into posts when in the ExtJS Category
 Version: 0.1
 Author: Sean Kellogg
 Author URI: http://blog.probonogeek.org
 */
 
-class ExtJSLoader {
+class WpExtJSLoader {
 
   var $pluginurl;
 
-  function ExtJSLoader() {
+  function WpExtJSLoader() {
 
-    $this->pluginurl = apply_filters( 'extjsloader_url', $wpurl . '/wp-content/plugins/extjs-loader/' );
+    $this->pluginurl = apply_filters( 'wpextjsloader_url', $wpurl . '/wp-content/plugins/wp-extjs-loader/' );
     $this->load_on_cat_id = 10;
 
     add_action( 'wp_head', array(&$this, 'MatchCategory'), 1000 );
@@ -64,6 +64,6 @@ class ExtJSLoader {
 }
 
 // Initiate the plugin class
-$ExtJSLoader = new ExtJSLoader();
+$WpExtJSLoader = new WpExtJSLoader();
 
 ?>
